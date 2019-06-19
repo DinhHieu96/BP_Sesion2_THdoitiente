@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="Amount">
+<select id="From">
+    <option value="USD">USD</option>
+    <option value="VND">VND</option>
+</select>
+<select id="To">
+    <option value="VND">VND</option>
+    <option value="USD">USD</option>
+</select>
+<input type="button" value="submit" onclick="submit()">
+<p id="1"></p>
+<script>
+    function submit() {
+        let amount=parseFloat(document.getElementById("Amount").value);
+        let from=document.getElementById("From").value;
+        let to=document.getElementById("To").value;
+        let money;
+        if ((from==="USD") && (to==="VND")){
+            money= amount* 23000;
+        } else {
+            money= amount / 23000;
+        }
+        document.getElementById("1").innerHTML=money;
+    }
+</script>
+</body>
+</html>
